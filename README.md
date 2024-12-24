@@ -57,27 +57,28 @@ This project involves deploying an online shop application consisting of multipl
    ```bash   
    kubectl get pods -n microservices
    NAME                                     READY   STATUS    RESTARTS   AGE
-   adservice-5f488b4f8b-726ft               1/1     Running   0          45s
-   adservice-5f488b4f8b-hp7fl               1/1     Running   0          45s
-   cartservice-68f8747f94-nrljl             1/1     Running   0          45s
-   cartservice-68f8747f94-nv26r             1/1     Running   0          45s
-   checkoutservice-86bdcfbbfc-2drx9         1/1     Running   0          45s
-   checkoutservice-86bdcfbbfc-pblrt         1/1     Running   0          45s
-   currencyservice-6f7fd6989-96c5f          1/1     Running   0          46s
-   currencyservice-6f7fd6989-wcpq9          1/1     Running   0          45s
-   emailservice-6df48986c8-74tn9            1/1     Running   0          46s
-   frontend-55cf69d447-2x2q5                1/1     Running   0          44s
-   frontend-55cf69d447-z4v4j                1/1     Running   0          45s
-   paymentservice-c5776df6f-ddw55           1/1     Running   0          46s
-   paymentservice-c5776df6f-gw6hc           1/1     Running   0          46s
-   productcatalogservice-8d4f48b75-qkpc7    1/1     Running   0          46s
-   productcatalogservice-8d4f48b75-t8qb8    1/1     Running   0          46s
-   recommendationservice-69459db9c9-886tn   1/1     Running   0          46s
-   recommendationservice-69459db9c9-v25lr   1/1     Running   0          46s
-   redis-cart-8c5bbbccf-6zmwd               1/1     Running   0          45s
-   redis-cart-8c5bbbccf-wn9ft               1/1     Running   0          45s
-   shippingservice-5cc877bc4c-ghpbv         1/1     Running   0          45s
-   shippingservice-5cc877bc4c-rzjzm         1/1     Running   0          45s
+   adservice-584d47dcbb-6hznn               1/1     Running   0          16s
+   adservice-584d47dcbb-86zdj               1/1     Running   0          16s
+   cartservice-68f8747f94-6929q             1/1     Running   0          90m
+   cartservice-68f8747f94-wjmsx             1/1     Running   0          90m
+   checkoutservice-86bdcfbbfc-4q7s4         1/1     Running   0          90m
+   checkoutservice-86bdcfbbfc-zknjm         1/1     Running   0          90m
+   currencyservice-6f7fd6989-ghlpn          1/1     Running   0          90m
+   currencyservice-6f7fd6989-q8zz6          1/1     Running   0          90m
+   emailservice-bb589dbcd-2mc4m             1/1     Running   0          90m
+   emailservice-bb589dbcd-dvrr6             1/1     Running   0          90m
+   frontend-55cf69d447-7w69j                1/1     Running   0          90m
+   frontend-55cf69d447-qz79r                1/1     Running   0          90m
+   paymentservice-c5776df6f-l47v4           1/1     Running   0          90m
+   paymentservice-c5776df6f-vqxdc           1/1     Running   0          90m
+   productcatalogservice-8d4f48b75-g6shq    1/1     Running   0          90m
+   productcatalogservice-8d4f48b75-ghvx9    1/1     Running   0          90m
+   recommendationservice-69459db9c9-lr62l   1/1     Running   0          90m
+   recommendationservice-69459db9c9-x45pb   1/1     Running   0          90m
+   redis-cart-8c5bbbccf-cwq9s               1/1     Running   0          90m
+   redis-cart-8c5bbbccf-zmz6p               1/1     Running   0          90m
+   shippingservice-5cc877bc4c-2v84q         1/1     Running   0          90m
+   shippingservice-5cc877bc4c-cm6mr         1/1     Running   0          90m
    ```
 
    ```bash
