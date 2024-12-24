@@ -95,7 +95,7 @@ This project involves deploying an online shop application consisting of multipl
    redis-cart              ClusterIP      10.100.155.39    <none>                                                                    6379/TCP       2m3s
    shippingservice         ClusterIP      10.100.26.24     <none>                                                                    50051/TCP      2m3s
    ```
-   Note the LoadBalancer URL in above. 
+   Note the LoadBalancer URL in above output of `kubectl get svc -n microservices`. 
    
 ## Production & Security Best Practices
   Following are the best practices:
