@@ -114,10 +114,10 @@ This project involves deploying an online shop application consisting of multipl
   3. Update Kubernetes to the latest version
 
 
-   **Configuration Files**
+   **Configuration File:**
    The Kubernetes manifests for Deployments and Services are located in the config.yaml file. 
 
-   **Microservices List**
+   **Microservices List:**
    - adservice
    - cartservice
    - checkoutservice
