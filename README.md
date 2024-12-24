@@ -130,7 +130,7 @@ This project involves deploying an online shop application consisting of multipl
    - redis-cart
    - shippingservice
   
-  7. **View the application**:
+ 7. **View the application**:
      The frontend service is exposed using a LoadBalancer, accessible via the external IP provided by the Kubernetes cluster
       i.e. `ae81806eea8224ab19cc2701eba675f4-1823985534.us-east-1.elb.amazonaws.com`.
       Enter this in web browser to see the deployed microservices application.
