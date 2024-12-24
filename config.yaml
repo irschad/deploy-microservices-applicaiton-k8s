@@ -4,6 +4,7 @@ kind: Deployment
 metadata:
   name: emailservice
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: emailservice
@@ -30,10 +31,10 @@ spec:
           periodSeconds: 5
         resources:
           requests: 
-            cpu: 100m
+            cpu: 50m
             memory: 64Mi
           limits:
-            cpu: 200m
+            cpu: 100m
             memory: 128Mi
 ---
 apiVersion: v1
@@ -320,11 +321,11 @@ spec:
           periodSeconds: 5
         resources:
           requests: 
-            cpu: 200m
-            memory: 180Mi
+            cpu: 50m
+            memory: 64Mi
           limits:
-            cpu: 300m
-            memory: 300Mi
+            cpu: 100m
+            memory: 128Mi
 
 ---
 apiVersion: v1
