@@ -304,13 +304,19 @@ spec:
         app: adservice
     spec:
       containers:
-      - name: service
+      - name: adservice
         image: gcr.io/google-samples/microservices-demo/adservice:v0.8.0
-        ports:
-        - containerPort: 9555
         env:
+        - name: ENABLE_PROFILER
+          value: "false"
+        - name: GOOGLE_APPLICATION_CREDENTIALS
+          value: "/dev/null"
+        - name: ENABLE_STACKDRIVER_PROFILER
+          value: "false"
         - name: PORT
           value: "9555"
+        ports:  
+        - containerPort: 9555
         livenessProbe:
           grpc:
             port: 9555
@@ -321,11 +327,11 @@ spec:
           periodSeconds: 5
         resources:
           requests: 
-            cpu: 50m
-            memory: 64Mi
+            cpu: 200m
+            memory: 180Mi
           limits:
-            cpu: 100m
-            memory: 128Mi
+            cpu: 300m
+            memory: 300Mi
 
 ---
 apiVersion: v1
