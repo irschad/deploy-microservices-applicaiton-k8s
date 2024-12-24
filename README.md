@@ -44,11 +44,11 @@ This project involves deploying an online shop application consisting of multipl
     namespace/microservices created
     ```
    
-6. **Deploy Microservices**
-   Apply the Kubernetes config to deploy the application:
+6. **Deploy Microservices:**
+     Apply the Kubernetes config to deploy the application:
     `kubectl apply -f config.yaml -n microservices`
    
-7. **Verify Deployment**
+7. **Verify Deployment:**
     Check the running pods and services:
     `kubectl get pods -n microservices`
     `kubectl get svc -n microservices`
