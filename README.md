@@ -37,7 +37,7 @@ This project involves deploying an online shop application consisting of multipl
     ip-192-168-8-199.ec2.internal    Ready    <none>   3m5s    v1.30.7-eks-59bf375
     ```
    
-4. **Create Namespace**
+4. **Create Namespace:**
    Isolate resources by creating a namespace for the microservices:
     ```bash
     kubectl create ns microservices
