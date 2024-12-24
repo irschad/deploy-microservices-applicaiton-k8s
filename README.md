@@ -22,7 +22,7 @@ This project involves deploying an online shop application consisting of multipl
      --name online-shop-microservices \
      --region us-east-1 \
      --nodes 3 \
-     --node-type t2.small \
+     --node-type t2.medium \
      --managed
 
    Export the kubeconfig to connect to the cluster:
@@ -53,7 +53,7 @@ This project involves deploying an online shop application consisting of multipl
     `kubectl get pods -n microservices`
     `kubectl get svc -n microservices`
 
-8. **Update Deployment for best practices**, including adding liveness and readiness probes, adding resource requests and limits, avoiding NodePort, and adding one replica.
+8. **Update Deployment for best practices**, including adding liveness & readiness probes, adding resource requests & limits, avoiding NodePort by replacing it with LoadBalancer, and adding one replica for each pod.
    ```bash   
    kubectl get pods -n microservices
    NAME                                     READY   STATUS    RESTARTS   AGE
