@@ -32,7 +32,10 @@ E1224 14:26:11.180430    16 throttler_api.cc:92] GRPC: src/core/lib/security/cre
 E1224 14:26:11.180627    16 throttler_api.cc:116] Failed to get Google default credentials
 E1224 14:26:11.180927    29 throttler_api.cc:297] Profiler API is not initialized, stop profiling
 ```
-To resolve this, the following is added in adservice deployment: 
+The error indicates that the ad service is attempting to use Google Cloud Profiler but is unable to initialize it due to missing Google credentials. To resolve this, we can disable the Profiler in the service configuration.
+Also, the logs indicate that the Profiler API is looking for application_default_credentials.json in /root/.config/gcloud/.
+So, we can redirect it to a non-existent path.
+Hence, the following is added in adservice deployment: 
 ```bash
         env:
         - name: ENABLE_PROFILER
@@ -122,5 +125,5 @@ shippingservice-5cc877bc4c-2v84q         1/1     Running   0          90m
 shippingservice-5cc877bc4c-cm6mr         1/1     Running   0          90m
 ```
 
-
+Finally, recheck the services and view the applicaiton in browser using loadbalancer URL.
 
