@@ -17,32 +17,32 @@ This project involves deploying an online shop application consisting of multipl
 ## Deployment Steps
 1. **Create Kubernetes Cluster**  
    Use the following command to create an EKS cluster:
-   ```bash
-   eksctl create cluster \
-     --name online-shop-microservices \
-     --region us-east-1 \
-     --nodes 3 \
-     --node-type t2.medium \
-     --managed
-
+    ```bash
+    eksctl create cluster \
+      --name online-shop-microservices \
+      --region us-east-1 \
+      --nodes 3 \
+      --node-type t2.medium \
+      --managed
+    ```
    Export the kubeconfig to connect to the cluster:
-   `export KUBECONFIG=/home/ec2-user/.kube/config`
+    `export KUBECONFIG=/home/ec2-user/.kube/config`
 
 2. **Verify the cluster nodes**:
     ```bash
-   kubectl get nodes
-   NAME                             STATUS   ROLES    AGE     VERSION
-   ip-192-168-35-97.ec2.internal    Ready    <none>   2m56s   v1.30.7-eks-59bf375
-   ip-192-168-51-198.ec2.internal   Ready    <none>   2m56s   v1.30.7-eks-59bf375
-   ip-192-168-8-199.ec2.internal    Ready    <none>   3m5s    v1.30.7-eks-59bf375
-   ```
+    kubectl get nodes
+    NAME                             STATUS   ROLES    AGE     VERSION
+    ip-192-168-35-97.ec2.internal    Ready    <none>   2m56s   v1.30.7-eks-59bf375
+    ip-192-168-51-198.ec2.internal   Ready    <none>   2m56s   v1.30.7-eks-59bf375
+    ip-192-168-8-199.ec2.internal    Ready    <none>   3m5s    v1.30.7-eks-59bf375
+    ```
    
 4. **Create Namespace**
    Isolate resources by creating a namespace for the microservices:
-   ```bash
-   kubectl create ns microservices
-   namespace/microservices created
-   ```
+    ```bash
+    kubectl create ns microservices
+    namespace/microservices created
+    ```
    
 6. **Deploy Microservices**
    Apply the Kubernetes config to deploy the application:
