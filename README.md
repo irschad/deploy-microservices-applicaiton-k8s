@@ -13,7 +13,6 @@ This project involves deploying an online shop application consisting of multipl
 - **Amazon EKS**: Managed Kubernetes cluster on AWS.
 - **Redis**: In-memory data store for caching and session management.
 - **Linux**: Underlying OS for cluster nodes.
-- **Linode LKE**: Used as an alternative testing platform.
 
 ## Deployment Steps
 1. **Create Kubernetes Cluster**  
@@ -26,11 +25,10 @@ This project involves deploying an online shop application consisting of multipl
      --node-type t2.small \
      --managed
 
- **Configure kubectl**
    Export the kubeconfig to connect to the cluster:
    `export KUBECONFIG=/home/ec2-user/.kube/config`
 
-2. **Verify the nodes**:
+2. **Verify the cluster nodes**:
     ```bash
    kubectl get nodes
    NAME                             STATUS   ROLES    AGE     VERSION
@@ -47,7 +45,7 @@ This project involves deploying an online shop application consisting of multipl
    ```
    
 6. **Deploy Microservices**
-   Apply the Kubernetes manifests to deploy the application:
+   Apply the Kubernetes config to deploy the application:
     `kubectl apply -f config.yaml -n microservices`
    
 7. **Verify Deployment**
@@ -55,7 +53,7 @@ This project involves deploying an online shop application consisting of multipl
     `kubectl get pods -n microservices`
     `kubectl get svc -n microservices`
 
-8. **Update Deployment for best practices**, including Add liveness and readiness probes, resource requests and limits, avoid NodePort, and add one replica.
+8. **Update Deployment for best practices**, including adding liveness and readiness probes, adding resource requests and limits, avoiding NodePort, and adding one replica.
    ```bash   
    kubectl get pods -n microservices
    NAME                                     READY   STATUS    RESTARTS   AGE
@@ -97,6 +95,7 @@ This project involves deploying an online shop application consisting of multipl
    redis-cart              ClusterIP      10.100.155.39    <none>                                                                    6379/TCP       2m3s
    shippingservice         ClusterIP      10.100.26.24     <none>                                                                    50051/TCP      2m3s
    ```
+   Note the LoadBalancer URL in above. 
    
 ## Production & Security Best Practices
   Following are the best practices:
@@ -115,24 +114,26 @@ This project involves deploying an online shop application consisting of multipl
   3. Update Kubernetes to the latest version
 
 
-**Configuration Files**
-The Kubernetes manifests for Deployments and Services are located in the config.yaml file. 
+   **Configuration Files**
+   The Kubernetes manifests for Deployments and Services are located in the config.yaml file. 
 
-**Microservices List**
-- adservice
-- cartservice
-- checkoutservice
-- currencyservice
-- emailservice
-- frontend
-- paymentservice
-- productcatalogservice
-- recommendationservice
-- redis-cart
-- shippingservice
+   **Microservices List**
+   - adservice
+   - cartservice
+   - checkoutservice
+   - currencyservice
+   - emailservice
+   - frontend
+   - paymentservice
+   - productcatalogservice
+   - recommendationservice
+   - redis-cart
+   - shippingservice
   
-9. View the application in web browser:
-    The frontend service is exposed using a LoadBalancer, accessible via the external IP provided by the Kubernetes cluster i.e. ae81806eea8224ab19cc2701eba675f4-1823985534.us-east-1.elb.amazonaws.com. Enter this in web browser to see the deployed microservices application.
+9. **View the application**:
+     The frontend service is exposed using a LoadBalancer, accessible via the external IP provided by the Kubernetes cluster
+      i.e. `ae81806eea8224ab19cc2701eba675f4-1823985534.us-east-1.elb.amazonaws.com`.
+      Enter this in web browser to see the deployed microservices application.
 
 
 
