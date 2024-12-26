@@ -8,7 +8,7 @@ This project involves deploying an online shop application consisting of multipl
 - Deployment of microservices in an Amazon EKS managed Kubernetes cluster.
 - Implementation of production and security best practices, including resource management, probes, and replica configurations.
 
-## Technologies Used
+## Technologies
 - **Kubernetes**: For container orchestration.
 - **Amazon EKS**: Managed Kubernetes cluster on AWS.
 - **Redis**: In-memory data store for caching and session management.
