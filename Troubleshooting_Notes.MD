@@ -125,5 +125,5 @@ shippingservice-5cc877bc4c-2v84q         1/1     Running   0          90m
 shippingservice-5cc877bc4c-cm6mr         1/1     Running   0          90m
 ```
 
-Finally, recheck the services and view the applicaiton in browser using loadbalancer URL.
+Finally, checked services and viewed the applicatin in browser using loadbalancer URL.
 
